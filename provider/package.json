@@ -1,0 +1,14 @@
+{
+  "name": "provider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.17.0",
+    "jest": "^27.3.1"
+  },
+  "scripts": {
+    "test:pact": "jest --testTimeout=30000 --testMatch \"**/*.pact.test.js\""
+  }
+}
