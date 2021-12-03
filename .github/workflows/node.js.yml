@@ -16,14 +16,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.5.0
-    - run: lsPACT_BROKER_TOKEN: 
+    - run: ls
     - name: Install packages
       run: npm ci
       working-directory: consumer
     - name: Run test
       env: 
         PACT_BROKER_BASE_URL: ${{secret.PACT_BROKER_BASE_URL}}
-        PACT_BROKER_TOKEN: {{secret.PACT_BROKER_TOKEN}}
+        PACT_BROKER_TOKEN: ${{secret.PACT_BROKER_TOKEN}}
         CI: true
         PUBLISH_PACT: true
       run: npm run test:pact
