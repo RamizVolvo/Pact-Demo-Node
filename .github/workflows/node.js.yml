@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 defaults:
   run:
-    working-directory: consumer
+    working-directory: ./consumer
 jobs:
   test:
 
