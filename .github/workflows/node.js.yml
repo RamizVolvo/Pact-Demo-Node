@@ -2,9 +2,7 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
-defaults:
-  run:
-    working-directory: ./consumer
+
 on:
   push:
     branches: [ master ]
@@ -12,8 +10,12 @@ on:
     branches: [ master ]
 
 jobs:
+  
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+       working-directory: ./consumer
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
