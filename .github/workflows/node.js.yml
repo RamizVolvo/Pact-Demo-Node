@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.5.0
     - name: Install packages
-      run: npm install
+      run: npm ci
       working-directory: ./consumer
     - name: Run test
       run: npm test:pact
