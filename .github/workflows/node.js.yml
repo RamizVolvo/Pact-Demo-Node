@@ -29,6 +29,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm test:pact
+      working-directory: ./consumer
    # Runs on branches as well, so we know the status of our PRs
   can-i-deploy:
     runs-on: ubuntu-latest
