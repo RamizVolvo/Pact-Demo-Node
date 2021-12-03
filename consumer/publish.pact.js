@@ -24,8 +24,8 @@ const opts = {
   //pactBrokerPassword: pactBrokerPassword,
   pactBroker: pactBrokerBaseUrl,
   pactBrokerToken: pactBrokerToken,
-  tags: ["prod", "test",process.env.GIT],
-  consumerVersion: "1.0",
+  tags: ["master", "test"],
+  consumerVersion: "1.2",
 };
 
 pact
