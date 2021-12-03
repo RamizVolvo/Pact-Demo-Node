@@ -25,7 +25,7 @@ const opts = {
   pactBroker: pactBrokerBaseUrl,
   pactBrokerToken: pactBrokerToken,
   tags: ["master", "test"],
-  consumerVersion: "1.2",
+  consumerVersion: "2.0",
 };
 
 pact
