@@ -2,20 +2,18 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
-
+defaults:
+  run:
+    working-directory: ./consumer
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-defaults:
-  run:
-    working-directory: ./consumer
+
 jobs:
   test:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
@@ -29,7 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm test:pact
-      working-directory: ./consumer
    # Runs on branches as well, so we know the status of our PRs
   can-i-deploy:
     runs-on: ubuntu-latest
