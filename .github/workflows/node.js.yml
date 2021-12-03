@@ -17,9 +17,10 @@ jobs:
       uses: actions/setup-node@v2.5.0
     - name: Install packages
       run: npm ci
+      working-directory: ./consumer
     - name: Run test
       run: npm test:pact
-      working-directory: consumer
+      
    # Runs on branches as well, so we know the status of our PRs
   can-i-deploy:
     runs-on: ubuntu-latest
