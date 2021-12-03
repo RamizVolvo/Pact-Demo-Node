@@ -37,4 +37,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: docker pull pactfoundation/pact-cli:latest
       - name: Can I deploy?
-        run: docker run --rm -v  ${{ github.workspace }}:${{ github.workspace }} -e ${{secrets.PACT_BROKER_BASE_URL}} -e ${{secrets.PACT_BROKER_TOKEN}} pactfoundation/pact-cli broker can-i-deploy --pacticipant FrontendWebsite --version 1.0 --to-environment prod --broker-base-url ${{secrets.PACT_BROKER_BASE_URL}} --broker-token ${{secrets.PACT_BROKER_TOKEN}} 
+        run: docker run --rm -v  ${{ github.workspace }}:${{ github.workspace }} -e ${{secrets.PACT_BROKER_BASE_URL}} -e ${{secrets.PACT_BROKER_TOKEN}} pactfoundation/pact-cli broker can-i-deploy --pacticipant FrontendWebsite --version 1.0 --to-environment test --broker-base-url ${{secrets.PACT_BROKER_BASE_URL}} --broker-token ${{secrets.PACT_BROKER_TOKEN}} 
