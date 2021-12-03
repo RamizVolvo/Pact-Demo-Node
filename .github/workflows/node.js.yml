@@ -18,7 +18,7 @@ jobs:
     - run: ls -a
     - name: Install packages
       run: npm ci
-      working-directory: /consumer
+      working-directory: ../consumer
     - name: Run test
       run: npm test:pact
       
