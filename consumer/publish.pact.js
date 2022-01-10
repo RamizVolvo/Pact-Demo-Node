@@ -13,9 +13,10 @@ let pactBrokerPassword = process.env.PACT_BROKER_PASSWORD || "pactbroker";
 let pactBrokerBaseUrl = process.env.PACT_BROKER_BASE_URL;
 let pactBrokerToken = process.env.PACT_BROKER_TOKEN;
 
-// const gitHash = require('child_process')
-//     .execSync('git rev-parse --short HEAD')
-//     .toString().trim();
+const gitHash = require("child_process")
+  .execSync("git rev-parse --short HEAD")
+  .toString()
+  .trim();
 
 const opts = {
   pactFilesOrDirs: [path.resolve(__dirname, "./pacts/")],
@@ -24,8 +25,8 @@ const opts = {
   //pactBrokerPassword: pactBrokerPassword,
   pactBroker: pactBrokerBaseUrl,
   pactBrokerToken: pactBrokerToken,
-  tags: ["master", "test"],
-  consumerVersion: "2.1",
+  tags: ["master", "test", "no-id-type"],
+  consumerVersion: gitHash,
 };
 
 pact
