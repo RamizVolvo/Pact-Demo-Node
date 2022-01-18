@@ -13,15 +13,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.5.0
-        # extract branch name
     - name: Extract branch name
         
       shell: bash
       run: echo "${GITHUB_REF#refs/heads/}"
       id: extract_branch
+    - uses: actions/checkout@v2
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.5.0
+        # extract branch name
+    
     - run: ls
     - name: Install packages
       run: npm ci
