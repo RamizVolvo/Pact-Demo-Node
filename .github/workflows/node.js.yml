@@ -19,7 +19,13 @@ jobs:
     - run: ls
     - name: Install packages
       run: npm ci
-      working-directory: consumer
+      working-directory: consumery
+        # extract branch name
+    - name: Extract branch name
+        
+      shell: bash
+      run: echo "${GITHUB_REF#refs/heads/}"
+      id: extract_branch
     - name: Run test
       env: 
         PACT_BROKER_BASE_URL: ${{secrets.PACT_BROKER_BASE_URL}}
@@ -29,16 +35,8 @@ jobs:
       run: npm run test:pact
       working-directory: consumer
       
-  # extract branch name
-    - name: Extract branch name
-        
-      shell: bash
-      run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
-      id: extract_branch
+
       
-  # print branch name
-    - name: Get branch name
-      run: echo 'The branch name is' $BRANCH_NAME
       
    # Runs on branches as well, so we know the status of our PRs
   
