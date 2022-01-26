@@ -43,6 +43,7 @@ describe("API Pact test", () => {
       // make request to Pact mock server
       const product = await api.getProduct("10");
 
+      //Unit test against mock
       expect(product).toStrictEqual({
         name: "28 Degrees",
       });
